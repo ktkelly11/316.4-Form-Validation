@@ -5,6 +5,7 @@ const username = document.querySelector("username");
 const email = document.querySelector("email");
 const password = document.querySelector("password");
 let specialChars = "!@#$%^&*()-_=+[{]};:'\",<.>/?\\|";
+let upperLowerCase = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*$/;
 
 // Number 1
 // Username Validation
@@ -60,3 +61,33 @@ function emailValidation(email) {
 
 // Number 3
 // Password Validation
+function passwordValidation(password) {
+  if (password.length < 12) {
+    alert("Your password must be at least 12 characters long");
+    return false;
+  }
+  if (password.upperLowerCase < 1) {
+    alert("You need to use at least one uppercase and one lowercase character");
+    return false;
+  }
+  if (password.number < 1) {
+    alert("Your password must contain at least one number.");
+    return false;
+  }
+  if (password.specialChars < 1) {
+    alert(
+      `"Your password must contain at least one of these unique characters: " + ${specialChars}`
+    );
+    return false;
+  }
+  if ((password = "password")) {
+    alert("Your password cannot contain the word password ");
+    return false;
+  }
+  if ((password = username)) {
+    alert("Your password cannot be the same as your username");
+    return false;
+  }
+  alert(`Your password is ${password}`);
+  return true;
+}
