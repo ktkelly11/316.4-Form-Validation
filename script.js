@@ -26,3 +26,34 @@ function usernameValidation(username) {
   alert(`Your username is ${username}`);
   return true;
 }
+
+// Number 2
+// Email Validation
+function emailValidation(email) {
+  let emailVal = email.value;
+
+  const atpos = emailVal.indexOf("@");
+  const dotpos = emailVal.lastIndexOf(".");
+
+  if (email.value === "") {
+    alert("Please provide an email");
+    email.focus();
+    return false;
+  }
+
+  if (atpos < 1) {
+    alert(
+      "Your email must include an @ symbol, which must not be at the beginning of the email."
+    );
+    email.focus();
+    return false;
+  }
+
+  if ((dotpos = "example.com")) {
+    alert(`Email can not be from the domain "example.com."`);
+    email.focus();
+    return false;
+  }
+
+  return emailVal;
+}
