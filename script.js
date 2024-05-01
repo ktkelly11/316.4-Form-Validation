@@ -57,3 +57,6 @@ function emailValidation(email) {
 
   return emailVal;
 }
+
+// Number 3
+// Password Validation
